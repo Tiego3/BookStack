@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundforn">
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        style="@style/HeaderTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:padding="6dp"
+        android:text="Home"
+        android:textSize="38sp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewTitle"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="6dp">
+
+        <!-- Menu Item: Books -->
+        <TextView
+            android:id="@+id/textViewBooks"
+            style="@style/TextViewStyle"
+            android:layout_width="6dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Books"
+            android:textSize="16sp"
+            android:textStyle="bold|italic" />
+
+        <!-- Menu Item: Categories -->
+        <TextView
+            android:id="@+id/textViewCategories"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Categories"
+            android:textSize="16sp" />
+
+        <!-- Menu Item: Goals -->
+        <TextView
+            android:id="@+id/textViewGoals"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Goals"
+            android:textSize="16sp" />
+
+        <!-- Menu Item: Wishlist -->
+        <TextView
+            android:id="@+id/textViewWishlist"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Wishlist"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutForButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/linearLayoutMenu"
+        android:paddingLeft="6dp">
+
+    <Button
+        android:id="@+id/buttonAdd"
+        style="@style/BtnStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Add Book"
+        />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/linearLayoutForButton"
+        android:clipToPadding="false"
+        android:padding="6dp"/>
+
+
+</RelativeLayout>

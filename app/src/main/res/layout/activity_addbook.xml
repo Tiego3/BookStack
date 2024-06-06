@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddBookActivity"
+    android:background="@color/backgroundforn">
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        style="@style/HeaderTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/headerbackgroundforn"
+        android:fontFamily="@font/roxboroughcf"
+        android:text=" Add Book"
+        android:textSize="38sp" />
+
+    <LinearLayout
+        android:id="@+id/homeLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/bookNameEditText"
+        style="@style/EditTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:hint="Enter Book Name"
+        android:layout_marginBottom="16dp"
+        android:padding="10dp"
+         />
+
+    <Button
+        android:id="@+id/uploadImageButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Upload book cover"
+        android:textColor="#fff"
+        android:background="@color/headerbrown"
+        android:fontFamily="@font/montserrat"
+        android:layout_marginBottom="16dp"
+        android:padding="16dp"/>
+
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:textColor="#fff"
+        android:background="@color/headerbrown"
+        android:fontFamily="@font/montserrat"
+        android:layout_marginBottom="16dp"
+        android:padding="16dp"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/coverImageView"
+        android:layout_width="100dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="16dp"
+        android:visibility="gone" />
+
+
+</LinearLayout>

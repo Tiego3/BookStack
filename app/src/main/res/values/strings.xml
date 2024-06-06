@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">BookStack</string>
+    <string name="prompt_select_category">Select Category</string>
+    <string name="prompt_select_language">Select Language</string>
+    <string-array name="category_array" >
+        <item>Autobiography</item>
+        <item>Romance</item>
+        <item>Comedy</item>
+        <item>Political</item>
+        <item>Self Help</item>
+        <item>Custom</item>
+
+    </string-array>
+    <string name="select_category_prompt">Select Category</string>
+    <string name="goal_text">Goal: %d</string>
+    <string name="no_goal_set"></string>
+</resources>

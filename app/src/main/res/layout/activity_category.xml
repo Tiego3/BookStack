@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CategoryActivity"
+    android:background="@color/backgroundforn">
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        style="@style/HeaderTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:padding="6dp"
+        android:background="@color/headerbackgroundforn"
+        android:fontFamily="@font/roxboroughcf"
+        android:text="Categories"
+        android:textSize="38sp" />
+    <LinearLayout
+        android:id="@+id/linearLayoutMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewTitle"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/headerbackgroundforn"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="6dp"
+        android:textColor="@color/brownish">
+
+        <TextView
+            android:id="@+id/textViewBooks"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Books"/>
+
+        <!-- Menu Item: Categories -->
+        <TextView
+            android:id="@+id/textViewCategories"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Categories"
+            android:textStyle="bold|italic"/>
+
+
+        <TextView
+            android:id="@+id/textViewGoals"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Goals"/>
+
+        <!-- Menu Item: Wishlist -->
+        <TextView
+            android:id="@+id/textViewWishlist"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Wishlist"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutForButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/linearLayoutMenu"
+        android:paddingLeft="6dp">
+
+        <Button
+            android:id="@+id/buttonAddCategories"
+            style="@style/BtnStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Add Category"
+            />
+        <TextView
+            android:id="@+id/categoryNoticeView"
+            style="@style/TextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Double click to set new goal for a category"/>
+    </LinearLayout>
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:background="@color/backgroundforn"/>
+
+
+</LinearLayout>
