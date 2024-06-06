@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 
     <application
@@ -31,6 +38,7 @@
         <activity android:name=".AddBookActivity" android:exported="true"  android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".CategoryActivity" android:exported="true"  android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".AddCategoryActivity" android:exported="true"  android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".RegisterActivity" android:exported="true"  android:theme="@style/AppTheme.NoActionBar"/>
 
         <meta-data
             android:name="preloaded_fonts"

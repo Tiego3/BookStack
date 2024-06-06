@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class BooksAdapter(private val imageList: List<Pair<String, String>>) : RecyclerView.Adapter<BooksAdapter.ImageViewHolder>() {
+class BooksAdapter(private var imageList: List<Pair<String, String>>) : RecyclerView.Adapter<BooksAdapter.ImageViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_book, parent, false)
@@ -31,5 +31,10 @@ class BooksAdapter(private val imageList: List<Pair<String, String>>) : Recycler
     class ImageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageView: ImageView = itemView.findViewById(R.id.imageView)
         val imageNameTextView: TextView = itemView.findViewById(R.id.imageNameTextView)
+    }
+
+    fun updateData(newImageList: List<Pair<String, String>>) {
+        imageList = newImageList
+        notifyDataSetChanged()
     }
 }
