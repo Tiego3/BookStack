@@ -7,45 +7,39 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
 
-class MainActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_register)
 
         auth = FirebaseAuth.getInstance()
 
-        val editTextUsername = findViewById<EditText>(R.id.editTextUsername)
-        val editTextPassword = findViewById<EditText>(R.id.editTextPassword)
-        val buttonLogin = findViewById<Button>(R.id.buttonLogin)
+        val editTextUsername = findViewById<EditText>(R.id.editTextUsernameRegister)
+        val editTextPassword = findViewById<EditText>(R.id.editTextPasswordRegister)
         val buttonRegister = findViewById<Button>(R.id.buttonRegister)
 
-        buttonLogin.setOnClickListener {
+        buttonRegister.setOnClickListener {
             val username = editTextUsername.text.toString()
             val password = editTextPassword.text.toString()
 
             if (username.isNotEmpty() && password.isNotEmpty()) {
-                auth.signInWithEmailAndPassword(username, password)
+                auth.createUserWithEmailAndPassword(username, password)
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
-                            Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
-                            startActivity(Intent(this, HomeActivity::class.java))
+                            Toast.makeText(this, "Registration successful", Toast.LENGTH_SHORT).show()
+                            startActivity(Intent(this, MainActivity::class.java))
                             finish()
                         } else {
-                            Toast.makeText(this, "Login failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "Registration failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                         }
                     }
             } else {
                 Toast.makeText(this, "Username or password cannot be empty", Toast.LENGTH_SHORT).show()
             }
-        }
-
-        buttonRegister.setOnClickListener {
-            startActivity(Intent(this, RegisterActivity::class.java))
         }
     }
 }
